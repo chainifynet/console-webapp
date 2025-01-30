@@ -1,0 +1,81 @@
+body {
+  margin: 0;
+  font-family: Poppins, 'Sans Serif',
+    sans-serif;
+  font-size: 0.925rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+/** light theme overrides */
+[data-theme="light"] .text-success {
+  color: #039136;
+}
+[data-theme="light"] .border-success {
+  border-color: #039136;
+}
+[data-theme="light"] .text-error {
+  color: #e85238;
+}
+[data-theme="light"] .text-warning {
+  color: #d9a41d;
+}
+
+[data-theme="cyberpunk"] .text-success {
+  color: #039136;
+}
+[data-theme="cyberpunk"] .text-error {
+  color: #db4228;
+}
+[data-theme="cyberpunk"] .text-warning {
+  color: #d48d00;
+}
+
+/** tooltip's font size */
+.tooltip::before {
+  font-size: 0.75rem !important;
+}
+
+/** placeholder's opacity */
+textarea::placeholder, input::placeholder {
+  opacity: 0.4 !important;
+}
+
+/** hack to remove first th child being sticky */
+.table th:first-child {
+  position: relative !important;
+}
+.table.sticky th:first-child {
+ position: sticky !important;
+ position: -webkit-sticky !important;
+ left: 0px;
+ z-index: 11;
+}
+
+/** Animation for confirm button: 3 second duration */
+@keyframes left-to-right-fill {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+.left-to-right-fill {
+  background-image: linear-gradient(to right, theme("colors.primary") 50%, transparent 50%);
+  background-size: 200% 100%;
+  animation: left-to-right-fill 3s ease-in-out forwards;
+
+}
+
+
+/** Remove the default clear button in Safari */
+input[type='search']::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
